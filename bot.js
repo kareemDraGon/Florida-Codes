@@ -258,47 +258,23 @@ if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send
 
 
 
-
-client.on('message', message => {
-  if(!message.channel.guild) return;
-if(message.content.startsWith('$bc')) {
-if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
-let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
-let copy = "QueenBot.";
-if (!args) return message.reply('**يجب عليك كتابة كلمة او جملة لإرسال البرودكاست**');message.channel.send(`**هل أنت متأكد من إرسالك البرودكاست؟ \nمحتوى البرودكاست:** \` ${args}\``).then(msg => {
-msg.react('✅')
-.then(() => msg.react('❌'))
-.then(() =>msg.react('✅'))
-
-let reaction1Filter = (reaction, user) => reaction.emoji.name === '✅' && user.id === message.author.id;
-let reaction2Filter = (reaction, user) => reaction.emoji.name === '❌' && user.id === message.author.id;
-let reaction1 = msg.createReactionCollector(reaction1Filter, { time: 12000 });
-let reaction2 = msg.createReactionCollector(reaction2Filter, { time: 12000 });
-reaction1.on("collect", r => {
-message.channel.send(`☑ | Done ... The Broadcast Message Has Been Sent For ${message.guild.members.size} Members`).then(m => m.delete(5000));
-message.guild.members.forEach(m => {
-var bc = new
-Discord.RichEmbed()
-.setColor('RANDOM')
-.setTitle('Broadcast')
-.addField('Server', message.guild.name)
-.addField('Sender', message.author.username)
-.addField('Message', args)
-.setThumbnail(message.author.avatarURL)
-.setFooter(copy, client.user.avatarURL);
-m.send({ embed: bc })
-msg.delete();
-})
-})
-reaction2.on("collect", r => {
-message.channel.send(`**Broadcast Canceled.**`).then(m => m.delete(5000));
-msg.delete();
-})
-})
-}
-
+client.on("message", message => {
+    var prefix = "#";
+ 
+            var args = message.content.substring(prefix.length).split(" ");
+            if (message.content.startsWith(prefix + "$bc")) {
+                         if (!message.member.hasPermission("CONNECT"))  return;
+                            let embed4 = new Discord.RichEmbed()
+             .setDescription("**:white_check_mark: | جاري ارسال البرودكاست**")
+           .addField("مرسل البرودكاست" , message.author)
+          .addField("نص البرودكاست" ,args.join("  "))
+                            .addField("عدد الاعضاء المرسل لهم :busts_in_silhouette:" ,` **[${message.guild.memberCount}]**`,true)
+                                                            .setColor("#008000")
+                                message.channel.sendEmbed(embed4);
+                                                      message.delete();
+                            
+                          }
 });
-
 
 
 
