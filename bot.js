@@ -257,7 +257,6 @@ if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send
 client.on('message', message => {
 
     if (message.author.id === client.user.id) return;
-   var a = "```"
    var z = "```"
    let embed = new Discord.RichEmbed()
     let args = message.content.split(' ').slice(1).join(' ');
