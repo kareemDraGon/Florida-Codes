@@ -1803,10 +1803,10 @@ function play(guild, song) {
 
 
 client.on("guildMemberAdd", (member) => {//MemberAdd
-client.channels.get('536184096368361483').edit({name : `『 الأعضاء ↩ ${member.guild.memberCount} 』`});
+client.channels.get('536184601744506881').edit({name : `『 الأعضاء ↩ ${member.guild.memberCount} 』`});
 })
 client.on("guildMemberRemove", (member) => {//MemberRemove
-client.channels.get('536184096368361483').edit({name : `『 الأعضاء ↩ ${member.guild.memberCount} 』`});
+client.channels.get('536184601744506881').edit({name : `『 الأعضاء ↩ ${member.guild.memberCount} 』`});
 })
 
 
