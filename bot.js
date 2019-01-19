@@ -4203,3 +4203,4 @@ client.channels.get('536184601744506881').edit({name : `『 الأعضاء ↩ $
 
 
 
+client.login(process.env.BOT_TOKEN);
