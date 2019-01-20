@@ -26,8 +26,8 @@ client.user.setStatus("dnd")
 
 
 
-client.on('guildMemberAdd', member=> {
-    member.addRole(member.guild.roles.find("name","Member"));
+client.on('guildMemberAdd', 𝐌𝐄𝐌𝐁𝐄𝐑r=> {
+    member.addRole(member.guild.roles.find("name","𝐌𝐄𝐌𝐁𝐄𝐑"));
     });
 
 
