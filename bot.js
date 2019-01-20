@@ -542,9 +542,6 @@ if(cmd === `${prefix}sug`) {
     if (!suggests) return message.channel.send("You should make A **suggestions** channel!")
     suggests.send(suggestEMBED);
 
-});
-	  
-	  
 	  
 client.on('message', async message => {
             if(message.content.includes('discord.gg')){
