@@ -524,63 +524,6 @@ client.on('message', message => {
 
 
 
-  client.on('message', message =>{
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = messageArray.slice(1);
-    let prefix = '#';
-
-if(cmd === `${prefix}sug`) {
-    var suggestMessage = message.content.substring(8)
-    let suggestEMBED = new Discord.RichEmbed()
-    .setColor(3447003)
-    .setTitle("New suggestion just added !")
-    .setDescription(`**${suggestMessage}**`)
-    .setFooter(`Suggested By : ${message.author.tag}`);
-    message.delete().catch(O_o=>{}) 
-    let suggests = message.guild.channels.find(`name`, "suggestions");
-    if (!suggests) return message.channel.send("You should make A **suggestions** channel!")
-    suggests.send(suggestEMBED);
-
-	  
-client.on('message', async message => {
-            if(message.content.includes('discord.gg')){
-                if(message.member.hasPermission("MANAGE_GUILD")) return;
-        if(!message.channel.guild) return;
-        message.delete()
-          var command = message.content.split(" ")[0];
-    let muterole = message.guild.roles.find(`name`, "Muted");
-    if(!muterole){
-      try{
-        muterole = await message.guild.createRole({
-          name: "Muted",
-          color: "#000000",
-          permissions:[]
-        })
-        message.guild.channels.forEach(async (channel, id) => {
-          await channel.overwritePermissions(muterole, {
-            SEND_MESSAGES: false,
-            ADD_REACTIONS: false
-          });
-        });
-      }catch(e){
-        console.log(e.stack);
-      }
-    }
-           if(!message.channel.guild) return message.reply('** This command only for servers**');
-     message.member.addRole(muterole);
-    const embed500 = new Discord.RichEmbed()
-      .setTitle("Muted🤐!!")
-            .addField(`** تم اعطاء ميوت **` , `**السبب : نشر سيرفرات اخري**`)
-            .setColor("RANDOM")
-            .setThumbnail(`${message.author.avatarURL}`)
-            .setAuthor(message.author.username, message.author.avatarURL)
-        .setFooter(`${message.guild.name} `)
-     message.channel.send(embed500)
-     message.author.send('**انت معاقب ميوت شاتي بسبب نشر سرفرات ان كان عن طريق الخطا __فـ__ تكلم مع الادارة**');
-   
-       });
-    
 	  
 
 
