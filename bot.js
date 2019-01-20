@@ -579,9 +579,8 @@ client.on('message', async message => {
      message.channel.send(embed500)
      message.author.send('**انت معاقب ميوت شاتي بسبب نشر سرفرات ان كان عن طريق الخطا __فـ__ تكلم مع الادارة**');
    
-       
-    }
-}	  
+       });
+    
 	  
 
 
