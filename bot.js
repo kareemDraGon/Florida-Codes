@@ -541,14 +541,12 @@ if(cmd === `${prefix}sug`) {
     let suggests = message.guild.channels.find(`name`, "suggestions");
     if (!suggests) return message.channel.send("You should make A **suggestions** channel!")
     suggests.send(suggestEMBED);
-}
 
 });
-
-
-
-
-      client.on('message', async message => {
+	  
+	  
+	  
+client.on('message', async message => {
             if(message.content.includes('discord.gg')){
                 if(message.member.hasPermission("MANAGE_GUILD")) return;
         if(!message.channel.guild) return;
@@ -575,18 +573,20 @@ if(cmd === `${prefix}sug`) {
            if(!message.channel.guild) return message.reply('** This command only for servers**');
      message.member.addRole(muterole);
     const embed500 = new Discord.RichEmbed()
-      .setTitle("Muted Ads")
-            .addField(`**  You Have Been Muted **` , `**Reason : Sharing Another Discord Link**`)
-            .setColor("c91616")
+      .setTitle("Muted🤐!!")
+            .addField(`** تم اعطاء ميوت **` , `**السبب : نشر سيرفرات اخري**`)
+            .setColor("RANDOM")
             .setThumbnail(`${message.author.avatarURL}`)
             .setAuthor(message.author.username, message.author.avatarURL)
         .setFooter(`${message.guild.name} `)
      message.channel.send(embed500)
-     message.author.send('` انت معاقب ميوت شاتي بسبب نشر سرفرات ان كان عن طريق الخطا **ف** تكلم مع الادارة `');
+     message.author.send('**انت معاقب ميوت شاتي بسبب نشر سرفرات ان كان عن طريق الخطا __فـ__ تكلم مع الادارة**');
    
        
     }
-}
+}	  
+	  
+
 
 
 
