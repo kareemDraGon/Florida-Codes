@@ -1,11 +1,4 @@
-const Discord = require('discord.js');
-const moment = require('moment');
-const client = new Discord.Client();
-const fs = require("fs");
-const prefix = "#";
-const devs = ['518353290329718785' , '518353290329718785' , '518353290329718785' , '518353290329718785'];
-const adminprefix = "#";
-const Discord = require('discord.js');
+cconst Discord = require('discord.js');
 const client = new Discord.Client();
 const mmss = require('ms');
 var prefix = "#";
@@ -148,7 +141,6 @@ msg.delete();
 }
 
 });
-
 
 
 
